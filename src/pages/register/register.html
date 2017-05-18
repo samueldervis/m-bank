@@ -7,12 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>register</ion-title>
+    <ion-title>Register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list>
+    <ion-item>
+      <ion-label floating>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.first_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.last_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>A/C Number</ion-label>
+      <ion-input type="text" [(ngModel)]="user.account"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>PIN</ion-label>
+      <ion-input type="password" [(ngModel)]="user.pin"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button color="secondary">OK</button>
+      <button ion-button color="light" (click)="goBack()">Back</button>
+    </ion-item>
+  </ion-list>
 </ion-content>

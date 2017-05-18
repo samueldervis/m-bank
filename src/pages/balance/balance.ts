@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the Balance page.
@@ -21,4 +21,11 @@ export class Balance {
     console.log('ionViewDidLoad Balance');
   }
 
+  goBack() {
+    this.navCtrl.pop();
+  }
+
+  checkBalance() {
+    this.navCtrl.push(Balance);
+  }
 }
