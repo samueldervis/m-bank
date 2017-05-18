@@ -1,0 +1,167 @@
+<!--
+  Generated template for the MyCommon page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>my-common</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <img src="assets/huduma-card.jpg"/>
+
+    <ion-card-content>
+      <ion-list>
+        <button ion-item color="light" round>
+          <ion-icon name="home"></ion-icon>
+          Light Round
+        </button>
+        <button ion-item round small>Primary Round</button>
+        <button ion-item color="secondary" round block>Secondary Round</button>
+        <button ion-item color="danger" round>Danger Round</button>
+        <button ion-item color="dark" round full>Dark Round</button>
+      </ion-list>
+    </ion-card-content>
+
+  </ion-card>
+  <ion-list no-lines="">
+    <ion-item>
+      <ion-icon item-left name="logo-twitter"></ion-icon>
+      Followers
+      <ion-badge item-right>600k</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-left name="logo-facebook"></ion-icon>
+      Likes
+      <ion-badge item-right>20k</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-label>Start Time</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+    </ion-item>
+
+    <ion-item-group>
+      <ion-item-divider>Basics</ion-item-divider>
+      <button ion-item>Basic Button</button>
+      <button ion-item color="light">Light</button>
+      <button ion-item color="secondary">Secondary</button>
+      <button ion-item color="danger">Danger</button>
+      <button ion-item color="dark">Dark</button>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>Outline buttons</ion-item-divider>
+      <button ion-item color="light" outline>Light Outline</button>
+      <button ion-item outline>Primary Outline</button>
+      <button ion-item color="secondary" outline>Secondary Outline</button>
+      <button ion-item color="danger" outline>Danger Outline</button>
+      <button ion-item color="dark" outline>Dark Outline</button>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>Clear buttons</ion-item-divider>
+      <button ion-item color="light" clear>Light Clear</button>
+      <button ion-item clear>Primary Clear</button>
+      <button ion-item color="secondary" clear>Secondary Clear</button>
+      <button ion-item color="danger" clear>Danger Clear</button>
+      <button ion-item color="dark" clear>Dark Clear</button>
+    </ion-item-group>
+    <!--
+      <ion-header>
+        <ion-navbar>
+          <ion-buttons start>
+            <button ion-button icon-only>
+              <ion-icon name="contact"></ion-icon>
+            </button>
+          </ion-buttons>
+
+          <ion-buttons end>
+            <button ion-button icon-only>
+              <ion-icon name="search"></ion-icon>
+            </button>
+          </ion-buttons>
+        </ion-navbar>
+      </ion-header>
+    -->
+    <ion-item-group>
+      <ion-item-divider>Checkbox</ion-item-divider>
+      <ion-item>
+        <ion-label>Daenerys Targaryen</ion-label>
+        <ion-checkbox color="dark" checked="true"></ion-checkbox>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Arya Stark</ion-label>
+        <ion-checkbox disabled="true"></ion-checkbox>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>Form Inputs</ion-item-divider>
+      <ion-item>
+        <ion-label fixed>Username</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-sliding>
+      <ion-item>
+        <h2>Slimer</h2>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="primary">
+          <ion-icon name="text"></ion-icon>
+          Text
+        </button>
+        <button ion-button color="secondary">
+          <ion-icon name="call"></ion-icon>
+          Call
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          <ion-icon name="mail"></ion-icon>
+          Email
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item>
+      <ion-thumbnail item-left>
+        <img src="img/thumbnail-totoro.png">
+      </ion-thumbnail>
+      <h2>My Neighbor Totoro</h2>
+      <p>Hayao Miyazaki • 1988</p>
+      <button ion-button clear item-right>View</button>
+    </ion-item>
+  </ion-list>
+  <ion-fab right bottom edge>
+    <button ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="left">
+      <button ion-fab>
+        <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon name="logo-twitter"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon name="logo-vimeo"></ion-icon>
+      </button>
+      <button ion-fab>
+        <ion-icon name="logo-googleplus"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+
+</ion-content>
