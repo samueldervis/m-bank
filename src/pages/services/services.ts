@@ -3,21 +3,20 @@ import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angula
 import {Balance} from "../balance/balance";
 import {Pin} from "../pin/pin";
 import {Tips} from "../tips/tips";
+import {AuthService} from "../../providers/auth-service";
+import {Login} from "../login/login";
 
-/**
- * Generated class for the Services page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @IonicPage()
 @Component({
   selector: 'page-services',
   templateUrl: 'services.html',
 })
 export class Services {
+  user: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public alertCtrl: AlertController, private auth: AuthService) {
+    this.user = this.auth.getUserInfo();
   }
 
   ionViewDidLoad() {
@@ -66,6 +65,12 @@ export class Services {
     });
     prompt.present();
 
+  }
+
+  public logout() {
+    this.auth.logout().subscribe(succ => {
+      this.navCtrl.setRoot(Login)
+    });
   }
 
   tips() {
