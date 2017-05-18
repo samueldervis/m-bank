@@ -1,25 +1,15 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Observable";
+import {Storage} from '@ionic/storage';
 import {Http} from '@angular/http';
 import "rxjs/add/operator/map";
-//
-// export class User {
-//   first_name: string;
-//   last_name: string;
-//   account: string;
-//   pin: string;
-//   bal: number;
-//
-//   constructor(first_name: string, email: string) {
-//     this.name = name;
-//     this.email = email;
-//   }
-// }
-
 
 @Injectable()
 export class AuthService {
   currentUser: any;
+
+  constructor(private storage: Storage) {
+  }
 
   public login(credentials) {
     if (credentials.account === null || credentials.pin === null) {
@@ -33,18 +23,29 @@ export class AuthService {
       //     }
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        let access = (credentials.pin === "1234" && credentials.account === "1234");
-        this.currentUser = credentials;
-        observer.next(access);
-        observer.complete();
+        let access = null;
+        this.storage.get(credentials.account).then((val) => {
+          if (val !== null) {
+            access = (val.pin == credentials.pin);
+            if (access) {
+              this.currentUser = val;
+            }
+
+          }
+          observer.next(access);
+          observer.complete();
+        });
+
       });
     }
   }
 
-  public    register(credentials) {
+  public register(credentials) {
     if (credentials.account === null || credentials.pin === null) {
       return Observable.throw("Please insert credentials");
     } else {
+      credentials.balance = 0;
+      this.storage.set(credentials.account, credentials);
       // At this point store the credentials to your backend!
       return Observable.create(observer => {
         observer.next(true);

@@ -16,6 +16,7 @@ import {Pin} from "../pages/pin/pin";
 import {Register} from "../pages/register/register";
 import {Tips} from "../pages/tips/tips";
 import {AuthService} from "../providers/auth-service";
+import {IonicStorageModule} from "@ionic/storage";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {AuthService} from "../providers/auth-service";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
