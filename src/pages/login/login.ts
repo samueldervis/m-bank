@@ -28,7 +28,7 @@ export class Login {
         if (allowed) {
           this.navCtrl.setRoot(Services);
         } else {
-          this.showError("Access Denied");
+          this.showError("Invalid credentials");
         }
       },
       error => {
