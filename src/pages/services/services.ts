@@ -5,6 +5,7 @@ import {Pin} from "../pin/pin";
 import {Tips} from "../tips/tips";
 import {AuthService} from "../../providers/auth-service";
 import {Login} from "../login/login";
+import {Storage} from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -15,7 +16,7 @@ export class Services {
   user: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-              public alertCtrl: AlertController, private auth: AuthService) {
+              public alertCtrl: AlertController, private auth: AuthService,private storage: Storage) {
     this.user = this.auth.getUserInfo();
   }
 
@@ -90,8 +91,7 @@ export class Services {
   }
 
   updateBalance(data) {
-    let curr = parseInt(this.user.balance) + parseInt(data.amount);
-    this.user.balance = curr;
-    console.log(this.user);
+    this.user.balance = parseInt(this.user.balance) + parseInt(data.amount);
+    this.storage.set(this.user.account, this.user);
   }
 }
