@@ -20,7 +20,7 @@ export class Services {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Services');
+
   }
 
   deposit() {
@@ -33,13 +33,17 @@ export class Services {
           placeholder: 'eg 2500'
         },
       ],
-      buttons: ['OK', {
-        text: 'Back',
-        role: 'cancel',
-        handler: () => {
-          this.updateBalance();
-        }
-      }]
+      buttons: [
+        {
+          text: "Ok",
+          handler: data => {
+            this.updateBalance(data);
+          }
+        },
+        {
+          text: 'Back',
+          role: 'cancel'
+        }]
     });
     prompt.present();
 
@@ -85,7 +89,9 @@ export class Services {
     this.navCtrl.push(Balance);
   }
 
-  updateBalance() {
-
+  updateBalance(data) {
+    let curr = parseInt(this.user.balance) + parseInt(data.amount);
+    this.user.balance = curr;
+    console.log(this.user);
   }
 }

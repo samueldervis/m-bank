@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
+import {AuthService} from "../../providers/auth-service";
 
 /**
  * Generated class for the Balance page.
@@ -13,12 +14,16 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
   templateUrl: 'balance.html',
 })
 export class Balance {
+  user: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public alertCtrl: AlertController, private auth: AuthService) {
+    this.user = this.auth.getUserInfo();
   }
 
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Balance');
+
   }
 
   goBack() {

@@ -15,9 +15,9 @@
 
 <ion-content padding>
   <ion-list no-lines>
-    <ion-item>A/C No: 0743534</ion-item>
-    <ion-item>Name: name name</ion-item>
-    <ion-item>Bal: Ksh 4500</ion-item>
+    <ion-item>A/C No: {{user.account}}</ion-item>
+    <ion-item>Name: {{user.first_name}} {{user.last_name}}</ion-item>
+    <ion-item>Bal: Ksh {{user.balance}}</ion-item>
     <ion-item>
       <button ion-button (click)="goBack()">Ok</button>
       <button ion-button color="light" (click)="goBack()">Back</button>

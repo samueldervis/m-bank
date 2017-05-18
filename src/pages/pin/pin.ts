@@ -20,7 +20,7 @@ export class Pin {
   pin: any = {};
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Pin');
+
   }
 
   goBack() {
