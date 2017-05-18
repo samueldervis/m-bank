@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {AlertController, IonicPage, Loading, LoadingController, NavController, NavParams} from 'ionic-angular';
+import {Component} from "@angular/core";
+import {AlertController, IonicPage, Loading, LoadingController, NavController, NavParams} from "ionic-angular";
 import {Register} from "../register/register";
 import {Services} from "../services/services";
 import {AuthService} from "../../providers/auth-service";
@@ -52,7 +52,7 @@ export class Login {
     this.loading.dismiss();
 
     let alert = this.alertCtrl.create({
-      title: 'Fail',
+      title: 'Login Failed',
       subTitle: text,
       buttons: ['OK']
     });

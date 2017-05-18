@@ -15,6 +15,7 @@ import {Services} from "../pages/services/services";
 import {Pin} from "../pages/pin/pin";
 import {Register} from "../pages/register/register";
 import {Tips} from "../pages/tips/tips";
+import {AuthService} from "../providers/auth-service";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import {Tips} from "../pages/tips/tips";
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService
   ]
 })
 export class AppModule {
