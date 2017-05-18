@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import {Balance} from "../balance/balance";
+import {Pin} from "../pin/pin";
+import {Tips} from "../tips/tips";
 
 /**
  * Generated class for the Services page.
@@ -41,6 +44,40 @@ export class Services {
     });
     prompt.present();
 
+  }
+
+  stopCheque() {
+    let prompt = this.alertCtrl.create({
+      title: "Stop Cheque",
+      message: "Please enter the cheque no.",
+      inputs: [
+        {
+          name: 'cheque',
+          placeholder: 'eg 09-2500'
+        },
+      ],
+      buttons: ['OK', {
+        text: 'Back',
+        role: 'cancel',
+        handler: () => {
+          // this.updateBalance();
+        }
+      }]
+    });
+    prompt.present();
+
+  }
+
+  tips() {
+    this.navCtrl.push(Tips);
+  }
+
+  changePin() {
+    this.navCtrl.push(Pin);
+  }
+
+  checkBalance() {
+    this.navCtrl.push(Balance);
   }
 
   updateBalance() {

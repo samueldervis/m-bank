@@ -25,7 +25,4 @@ export class Balance {
     this.navCtrl.pop();
   }
 
-  checkBalance() {
-    this.navCtrl.push(Balance);
-  }
 }

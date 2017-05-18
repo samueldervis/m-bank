@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the Pin page.
@@ -17,8 +17,13 @@ export class Pin {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  pin: any = {};
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad Pin');
   }
 
+  goBack() {
+    this.navCtrl.pop();
+  }
 }

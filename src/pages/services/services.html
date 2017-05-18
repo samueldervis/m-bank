@@ -17,9 +17,12 @@
   <ion-list>
     <button ion-item (click)="deposit()">Deposit</button>
     <button ion-item (click)="checkBalance()">Balance Enquiry</button>
-    <button ion-item>Stop Cheque</button>
-    <button ion-item>Change PIN</button>
-    <button ion-item>Financial Tips</button>
-    <button ion-item><ion-icon name="back"></ion-icon> Back</button>
+    <button ion-item (click)="stopCheque()">Stop Cheque</button>
+    <button ion-item (click)="changePin()">Change PIN</button>
+    <button ion-item (click)="tips()">Financial Tips</button>
+    <button ion-item>
+      <ion-icon name="home"></ion-icon>
+      Back
+    </button>
   </ion-list>
 </ion-content>

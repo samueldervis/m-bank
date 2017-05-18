@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the Tips page.
@@ -21,4 +21,7 @@ export class Tips {
     console.log('ionViewDidLoad Tips');
   }
 
+  goBack() {
+    this.navCtrl.pop();
+  }
 }

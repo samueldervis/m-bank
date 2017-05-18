@@ -7,12 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>pin</ion-title>
+    <ion-title>Change PIN</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label floating>Old PIN</ion-label>
+      <ion-input type="text" [(ngModel)]="pin.old"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>New PIN</ion-label>
+      <ion-input type="text" [(ngModel)]="pin.new"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Repeat PIN</ion-label>
+      <ion-input type="text" [(ngModel)]="pin.confirm"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="goBack()">Ok</button>
+      <button ion-button color="light" (click)="goBack()">Back</button>
+    </ion-item>
+  </ion-list>
 </ion-content>
